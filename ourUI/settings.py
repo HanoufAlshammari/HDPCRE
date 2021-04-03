@@ -23,7 +23,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'a-skd+xzh4&dka$6(wl5q*#7%b%q8a%aijy70cc#(5mw6+y25-'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 # add local and hroku host
 ALLOWED_HOSTS = ['hdpcapp.herokuapp.com', '127.0.0.1']
