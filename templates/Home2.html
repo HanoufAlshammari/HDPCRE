@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Home page</title>
+  </head>
+  <body style="background: url(https://i.pinimg.com/564x/04/8f/47/048f47da844fa38f5a33152f82cdde84.jpg);   background-size: 100%; background-position: top;">
+    <h1 style="text-align:  center; ">Heart Disease Predictive Classifier</h1>
+
+    <body>
+
+
+  <fieldset>
+         <legend>Please input your medical test Information</legend>
+
+        <br/>
+         <label style="font-size: 22px; text-transform: capitalize ; font-weight: bolder; display: block; position: absolute; left: 20px;">Age</label>
+         <br/>
+         <form method="POST" action="{% url 'result' %}">
+           {% csrf_token %}
+         <input type="text" name="age"  placeholder="Enetr your age" style="box-shadow: inset 0px 0px 10px 0px rgb(126, 124, 124); width:180px ; padding:5px; border-radius: 10px; display: block; position: absolute; top: 160px; ">
+             <br>
+             <br/>
+             <br/>
+         <label style="font-size: 22px; text-transform: capitalize; font-weight: bolder; display: block; position: absolute; left: 20px; ">Gender</label>
+         <br/>
+         <select name="sex" style="box-shadow: inset 0px 0px 10px 0px rgb(126, 124, 124); width:190px ; padding:5px; border-radius: 10px; display: block; position: absolute; top: 230px; ">
+          <option name="female">female</option>
+          <option name="male">male</option>
+         </select>
+              <br>
+            <br/>
+            <br/>
+         <label style="font-size: 22px; text-transform: capitalize;font-weight: bolder; display: block; position: absolute; left: 20px; ">Type of chest pain</label>
+         <br/>
+         <select name="chest_pain_type" style="box-shadow: inset 0px 0px 10px 0px rgb(126, 124, 124); width:220px ; padding:5px; border-radius: 10px; display: block; position: absolute; top: 300px; ">
+          <option name="typical angina">typical angina</option>
+          <option name="atypical angina">atypical angina</option>
+          <option name="non-anginal pain">non-angina pain</option>
+          <option name="asymptomatic">asymptomatic</option>
+         </select>
+         <br>
+         <br/>
+         <br/>
+        </br>
+         <label style="font-size: 22px; text-transform: capitalize;font-weight: bolder; display: block; position: absolute; left: 20px; ">Resting blood pressure</label>
+         <br/>
+         <input type="text" name="resting_blood_pressure" placeholder="resting blood pressure in (mm Hg)" style="box-shadow: inset 0px 0px 10px 0px rgb(126, 124, 124); width:220px ; padding:5px; border-radius: 10px; display: block; position: absolute; top: 400px; " >
+         <br>
+         <br/>
+         <br/>
+
+         <label style="font-size: 22px; text-transform: capitalize; font-weight: bolder; display: block; position: absolute; left: 470px; top: 120px;">serum cholestrol</label>
+         <br/>
+         <input type="text" name="cholesterol" placeholder="serum cholestrol in (mg/dl) " style="box-shadow: inset 0px 0px 10px 0px rgb(126, 124, 124); width:220px ; padding:5px; border-radius: 10px; display: block; position: absolute; top: 160px; left: 470px; ">
+         <br>
+
+         <label style="font-size: 22px; text-transform: capitalize; font-weight: bolder; display: block; position: absolute; left: 470px; top: 200px;">Fasting blood sugar > 120 mg/dl</label>
+         <br/>
+         <select name="fasting_blood_sugar" style="box-shadow: inset 0px 0px 10px 0px rgb(126, 124, 124); width:260px ; padding:5px; border-radius: 10px; display: block; position: absolute; top: 230px; left: 470px; ">
+          <option name="yes">yes</option>
+          <option name="no">no</option>
+         </select>
+         <br>
+
+         <label style="font-size: 22px; text-transform: capitalize; font-weight: bolder; display: block; position: absolute; left: 470px; top: 270px;">Resting electrocardiographic results</label>
+         <br/>
+         <select name="rest_ecg" style="box-shadow: inset 0px 0px 10px 0px rgb(126, 124, 124); width:280px ; padding:5px; border-radius: 10px; display: block; position: absolute; top: 300px; left: 470px; ">
+          <option name="normal">Normal</option>
+          <option name="st-t wave abnormality">st-t wave abnormality</option>
+          <option name="left ventricular hypertrophy‏">left ventricular hypertrophy‏</option>
+         </select>
+         <br>
+
+         <label style="font-size: 22px; text-transform: capitalize; font-weight: bolder; display: block; position: absolute; left: 470px; top: 360px;">Maximum heart rate achieved</label>
+         <br/>
+         <input type="text" name="max_heart_rate_achieved" placeholder="Maximum heart rate achieved " style="box-shadow: inset 0px 0px 10px 0px rgb(126, 124, 124); width:280px ; padding:5px; border-radius: 10px; display: block; position: absolute; top: 400px; left: 470px; ">
+         <br>
+
+         <label style="font-size: 22px; text-transform: capitalize; font-weight: bolder; display: block; position: absolute; left: 930px; top: 120px;">Exercise induced angina</label>
+         <br/>
+         <select name="exercise_induced_angina" style="box-shadow: inset 0px 0px 10px 0px rgb(126, 124, 124); width:220px ; padding:5px; border-radius: 10px; display: block; position: absolute; top: 160px; left: 930px; ">
+          <option name="yes">yes</option>
+          <option name="no">no</option>
+         </select>
+         <br>
+
+         <label style="font-size: 22px; text-transform: capitalize; capitalize; font-weight: bolder; display: block; position: absolute; left: 930px; top: 200px;">ST depression induced by exercise </label>
+         <br/>
+         <input type="text" name="st_depression" placeholder="ST depression induced by exercise" style="box-shadow: inset 0px 0px 10px 0px rgb(126, 124, 124); width:240px ; padding:5px; border-radius: 10px; display: block; position: absolute; top: 230px; left: 930px; ">
+         <br>
+
+         <label style="font-size: 22px; text-transform: capitalize; font-weight: bolder; display: block; position: absolute; left: 930px; top: 270px;">Slope of the peak exercise ST segment </label>
+         <br/>
+         <select name="st_slope" style="box-shadow: inset 0px 0px 10px 0px rgb(126, 124, 124); width:260px ; padding:5px; border-radius: 10px; display: block; position: absolute; top: 300px; left: 930px; ">
+          <option name="st_slope_upsloping">st_slope_upsloping</option>
+          <option name="flat">flat</option>
+          <option name="st_slope_downsloping">st_slope_downsloping</option>
+         </select>
+         <br>
+
+         <label style="font-size: 22px; text-transform: capitalize;font-weight: bolder; display: block; position: absolute; left: 930px; top: 340px;">Number of major vessels colored by flourosopy</label>
+         <br/>
+         <select name="num_major_vessels" style="box-shadow: inset 0px 0px 10px 0px rgb(126, 124, 124); width:260px ; padding:5px; border-radius: 10px; display: block; position: absolute; top: 400px; left: 930px; ">
+          <option name="Zero">Zero</option>
+          <option name="One">One</option>
+          <option name="Two">Two</option>
+          <option name="Three">Three</option>
+         </select>
+         <br>
+
+         <label style="font-size: 22px; text-transform: capitalize; font-weight: bolder; display: block; position: absolute; left: 470px; top: 445px;">thal</label>
+         <br/>
+         <select name="thalassemia"style="box-shadow: inset 0px 0px 10px 0px rgb(126, 124, 124); width:290px ; padding:5px; border-radius: 10px; display: block; position: absolute; top: 480px; left: 470px; " >
+          <option name="normal">normal</option>
+          <option name="thalassemia_fixed defect">thalassemia_fixed defect</option>
+          <option name="thalassemia_reversable defect">thalassemia_reversable defect</option>
+         </select>
+
+
+
+         <input type="submit" value='Get Predictions' style="border-radius: 10px; color: rgb(207, 114, 207); background-color: black ; font-size: 24px; text-align: center; display: block; margin: auto; display: block; position: absolute; top: 560px; left:500px;" >
+
+             <div id="" >
+
+             </div>
+</form>
+  </fieldset>
+
+      <br/>

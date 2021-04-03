@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>HOME</title>
+        <style>
+            #img{
+                margin: 0px auto 0px;
+                display: block;
+                text-align: center;
+
+
+            }
+            #name{
+                text-align: center ;
+                background-color: rgb(183, 142, 223);
+                display: inline-block;
+                color: cornsilk;
+                padding: 12px  25px;
+                margin: 0px   600px ;
+                border-radius: 300px;
+                position: absolute;
+                top:  750px;
+                right: 400px;
+                width: 100px;
+            }
+            #name1{
+                text-align: center ;
+                background-color: rgb(183, 142, 223);
+                display: inline-block;
+                color: cornsilk;
+                padding: 12px  25px;
+                margin: 0px   600px ;
+                border-radius: 300px;
+                position: absolute;
+                top:  750px;
+                right:15px;
+                width: 100px;
+            }
+            #name2{
+                text-align: center ;
+                background-color: rgb(183, 142, 223);
+                display: inline-block;
+                color: cornsilk;
+                padding: 12px  25px;
+                margin: 0px   600px ;
+                border-radius: 300px;
+                position: absolute;
+                top:  750px;
+                left: 400px;
+                width: 100px;
+            }
+
+
+        </style>
+    </head>
+    <body style="background: url(https://i.pinimg.com/736x/e4/b9/51/e4b9512115309bdbb3fac67c7b3b3592.jpg);   background-size: 100%; background-position: top;">
+
+        <p style="font-size: 28px;display: block; padding: 10px 200px ; border-radius: 300px; color:  cornsilk; text-align: center; background-color: rgb(183, 142, 223);  margin: 10px  10px;  "> <b>Welcome to our website!</b>
+        <br/>
+        <b>This ML model will help predict whether or not the patient might have a heart disease.</b>
+        </p>
+
+
+        <p style="font-size: 20px;display: block; padding: 10px 200px ; border-radius: 300px; color:  cornsilk; text-align: center; background-color: rgb(183, 142, 223);  margin: 10px  10px;  "> This system is intended to be useful in supporting the decision-making of doctors and healthcare members in hospitals and cardiac clinics based on the data of
+          447 samples of patients and non-patients from global and <i>local</i> cardiac clinics.
+        </p>
+
+        <img src="https://images.squarespace-cdn.com/content/v1/5c60ba0693a6326caff33d22/1552149933401-DRIVABAQOWS17MGJTWUX/ke17ZwdGBToddI8pDm48kCQltXx7saUMgoQf-TU82N1Zw-zPPgdn4jUwVcJE1ZvWEtT5uBSRWt4vQZAgTJucoTqqXjS3CfNDSuuf31e0tVENcSCN77OS22QuaHPuqJJYAH1YBetA1a_wOE5wBDFfP2Q6l2WM7tn7mqHTODzkmeM/cvd+icon.png" alt="" id="img" height="500" width="500">
+
+
+
+
+        <a href="{% url 'Home2' %}" >
+            <div id="name" >
+                login as a guest
+            </div>
+
+        </a>
+
+        <a href="{% url 'login' %}" >
+            <div id="name1" >
+                login
+            </div>
+
+        </a>
+
+        <a href="{% url 'register' %}" >
+            <div id="name2" >
+                register
+            </div>
+
+        </a>
+
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    </body>
+
+</html>
