@@ -49,8 +49,7 @@ st_slopex, num_major_vesselsx, thalassemiax):
           'thalassemia_fixed defect', 'thalassemia_normal',
           'thalassemia_reversable defect']
 
-        #categorical = ['sex', 'chest_pain_type', 'fasting_blood_sugar', 'rest_ecg',
-        #  'exercise_induced_angina', 'st_slope', 'thalassemia']
+      
   input_df = pd.DataFrame(columns=one_hot_col)
 
 
@@ -67,7 +66,7 @@ st_slopex, num_major_vesselsx, thalassemiax):
   scaler = joblib.load('scaler.gz')
 
 
-  #input_df[numerical] = scaler.fit(input_df[numerical]).transform(input_df[numerical])‏
+ 
   input_df[numerical] = scaler.transform(input_df[numerical])
 
 
@@ -231,26 +230,11 @@ st_slopex, num_major_vesselsx, thalassemiax):
 
 
 def result(request):
-    #age = None
-    #resting_blood_pressure = None
-    #sex = None
-    #cholesterol = None
-    #max_heart_rate_achieved = None
-    #st_depression = None
-    #chest_pain_type = None
-    #fasting_blood_sugar = None
-    #rest_ecg = None
-    #exercise_induced_angina = None
-    #st_slope = None
-    #num_major_vessels = None
-    #thalassemia = None
+
 
     # take input from user
     if request.method == 'POST':
         age=request.POST.get('age')
-        #age= (request.POST.get['age'])
-
-        #age =(request.POST.get['age'])
         resting_blood_pressure = request.POST.get('resting_blood_pressure')
         sex = request.POST.get('sex')
         cholesterol = request.POST.get('cholesterol')
@@ -268,47 +252,12 @@ def result(request):
 
 
 
-
-
-            #global age = (request.GET['age'])
-
-
-
-
-        #resting_blood_pressure = int(request.GET['resting_blood_pressure'])
-        #sex = str(request.GET['sex'])
-        #cholesterol = int(request.GET['cholesterol'])
-        #max_heart_rate_achieved = int(request.GET['max_heart_rate_achieved'])
-        #st_depression = int(request.GET['st_depression'])
-        #chest_pain_type = str(request.GET['chest_pain_type'])
-        #fasting_blood_sugar = str(request.GET['fasting_blood_sugar'])
-        #rest_ecg = str(request.GET['rest_ecg'])
-        #exercise_induced_angina = str(request.GET['exercise_induced_angina'])
-        #st_slope = str(request.GET['st_slope'])
-        #num_major_vessels = int(request.GET['num_major_vessels'])
-        #thalassemia = str(request.GET['thalassemia'])
-
-
     result = getPredictions(age,resting_blood_pressure,sex,cholesterol,max_heart_rate_achieved,st_depression,chest_pain_type,fasting_blood_sugar,rest_ecg,exercise_induced_angina,st_slope,num_major_vessels,thalassemia)
 
     return render(request, 'result.html', {'result': result})
 
 
-#input proccesing
-    #columns_to_scale = ['age', 'resting_blood_pressure', 'cholesterol', 'max_heart_rate_achieved', 'st_depression']
-#def scale_numerical(data,columns_to_scale):
- # from sklearn.preprocessing import StandardScaler
-  #standardScaler = StandardScaler()
-  #data[columns_to_scale] = standardScaler.fit_transform(data[columns_to_scale])
-  #return data ‏
 
-#get predection
-
-
-
-
-
-# addit2
 
 def registerPage(request):
 	#if request.user.is_authenticated:
