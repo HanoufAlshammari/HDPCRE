@@ -68,7 +68,7 @@ st_slopex, num_major_vesselsx, thalassemiax):
 
 
   #input_df[numerical] = scaler.fit(input_df[numerical]).transform(input_df[numerical])‏
-  input_df[numerical] = scaler.fit_transform(input_df[numerical])
+  input_df[numerical] = scaler.transform(input_df[numerical])
 
 
   if (sexx == 'male'):
